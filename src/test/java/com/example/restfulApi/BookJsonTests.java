@@ -26,4 +26,14 @@ public class BookJsonTests {
                 .isEqualTo(32.45);
 
     }
+    @Test
+    void bookDeserializationTest() throws IOException {
+        String expected = """
+                { "title": "Spring in Action",
+                "price": 32.45}
+            """;
+        assertThat(json.parse(expected)).isEqualTo(new Book("Spring in Action", 32.45));
+        assertThat(json.parseObject(expected).title()).isEqualTo("Spring in Action");
+        assertThat(json.parseObject(expected).price()).isEqualTo(32.45);
+    }
 }
