@@ -1,5 +1,6 @@
-package com.example.restfulApi;
+package com.example.restfulApi.adapter.in.web;
 
+import com.example.restfulApi.Book;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
