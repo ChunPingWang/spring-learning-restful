@@ -2,10 +2,7 @@ package com.example.restfulApi.adapter.in.web;
 
 import com.example.restfulApi.Book;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/bookstore")
@@ -18,5 +15,9 @@ public class BookStoreController {
              return ResponseEntity.ok(new Book("Java Programming", 100.0));
          else
              return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping
+    public void createBook(@RequestBody Book book) {
     }
 }
